@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:background="@drawable/rounded_corner"
+    >
+    
+    
+    <FrameLayout
+        android:id="@+id/frame_1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingTop="10dp" 
+		android:layout_centerHorizontal="true"
+		android:background="@drawable/rounded_corner">
+		
+		<ImageView
+		    android:id="@+id/item_image_lapak"
+			android:layout_width="90dp"
+			android:layout_height="90dp"
+			android:adjustViewBounds="true"
+			android:scaleType="fitCenter"
+			android:layout_gravity="center"
+			android:src="@drawable/rating"
+			
+		/>
+
+		<CheckBox
+		    android:id="@+id/checkBox1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content" />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/title"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="3dip"
+        android:paddingBottom="3dip"
+        android:layout_below="@id/frame_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:singleLine="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:text="lalalalalalalaalalallalalalaajjajajajjajajjaja" />
+    <View
+        android:layout_below="@id/title"
+        android:id="@+id/divider"
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:background="@android:color/darker_gray"/>
+    <TextView
+        android:id="@+id/stock"
+		android:paddingLeft="5dip"
+		android:paddingRight="5dip"
+		android:paddingTop="3dip"
+		android:paddingBottom="3dip"
+		android:layout_below="@id/divider"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:lines="1"
+		android:text="Stock:" />
+    <TextView
+        android:id="@+id/price"
+		android:paddingLeft="5dip"
+		android:paddingRight="5dip"
+		android:paddingTop="3dip"
+		android:paddingBottom="3dip"
+		android:layout_below="@id/stock"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:lines="1"
+		android:text="Price:" />
+
+    <!-- <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/price"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="26dp"
+        android:lines="1"
+        android:paddingBottom="3dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="3dip"
+        android:text="terjual" />
+ -->    
+</RelativeLayout>

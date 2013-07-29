@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layout profil -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+<LinearLayout
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    
+     >
+    <RelativeLayout
+        android:id="@+id/panel_desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         >
+ <!-- panel gambar produk -->
+ <RelativeLayout android:id="@+id/panel_thumbnail" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:padding="3dip"		
+        android:background="@drawable/image_bg"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+	    android:layout_marginRight="5dip">
+	    
+	    <!-- profile picture -->	    
+<ImageView     
+			android:id="@+id/prof_pic"   
+	        android:layout_width="100dip"
+	        android:layout_height="100dip"
+	        android:src="@drawable/rating"/>
+
+
+ </RelativeLayout>
+ 
+ </RelativeLayout>
+ 
+   <!-- nama user -->
+ <TextView
+     android:id="@+id/prof_nama"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_toRightOf="@id/panel_thumbnail"
+     android:layout_marginLeft="10dp"
+     android:layout_marginTop="15dp"
+     android:text="Farah Nuraini"
+     android:textStyle="bold"
+     android:textColor="#a30046"
+     android:textSize="25sp"
+     ></TextView>
+ <!-- tanggal bergabung di bukalapak -->
+<TextView
+        android:id="@+id/prof_email"
+    	android:textSize="14sp"
+  		android:layout_marginLeft="10dp"
+  		android:layout_marginTop="10dp"
+  		android:layout_marginRight="15dp"
+    	android:layout_marginBottom="5dp"     
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prof_nama"
+        android:layout_toRightOf="@id/panel_thumbnail"
+        android:text="lala@gmail.com"
+         />
+ <TextView
+        android:id="@+id/prof_phone"
+    	android:textSize="14sp"
+  		android:layout_marginLeft="10dp"
+  		android:layout_marginRight="15dp"
+    	android:layout_marginBottom="10dp"     
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prof_email"
+        android:layout_toRightOf="@id/panel_thumbnail"
+        android:text="08199292992"
+         />
+
+    
+<!-- label BL User -->
+<TextView
+    android:id="@+id/prof_lblBankUser"
+   
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/panel_thumbnail"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="15dp"
+    android:text="Keterangan Bank"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:textColor="#a30046"
+    ></TextView>
+
+
+<!-- jumlah rekomendasi -->
+<TextView
+    android:id="@+id/prof_bankName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/prof_lblBankUser"
+    android:layout_marginLeft="10dp"
+    android:text="Bank Republik Dummy"
+    
+    ></TextView>
+
+<!-- label kondisi -->
+<TextView 
+    android:id="@+id/prof_bankRek"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp" 
+    android:text="234567890"
+    />
+
+
+</LinearLayout>
+</ScrollView>

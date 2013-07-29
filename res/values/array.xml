@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="color_names">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>White</item>
+        <item>Black</item>
+    </string-array>
+    
+    <string-array name="slide_menu">
+        <item>Upload</item>
+        <item>Lapak Dijual</item>
+        <item>Lapak Tidak Dijual</item>
+        <item>Pesan</item>
+        <item>Transaksi</item>
+    </string-array>
+
+    <string-array name="menu_ic">
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/trash</item>
+    </string-array>
+
+</resources>

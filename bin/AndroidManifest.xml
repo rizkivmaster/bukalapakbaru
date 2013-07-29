@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.bukalapakdummy"
+    android:installLocation="preferExternal"
+    android:versionCode="1"
+    android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="14" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/ExampleTheme" >
+        <activity
+            android:name="com.example.bukalapakdummy.LoginActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+                        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        <activity android:name="com.example.bukalapakdummy.ResponsiveUIActivity" >
+        </activity>
+        <activity
+            android:name="com.example.bukalapakdummy.UploadFragment"
+            android:label="@string/app_name" 
+            android:theme="@style/ExampleTheme1">
+        </activity>
+        <activity android:name="com.example.bukalapakdummy.ConversationActivity" 
+            android:theme="@style/ExampleTheme1"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name="com.example.bukalapakdummy.UpdateFragment" 
+            android:theme="@style/ExampleTheme1">
+        </activity>
+        <activity
+            android:name="com.bukalapakdummy.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity 
+            android:name="com.example.bukalapakdummy.UploadLaterFragment"
+            android:theme="@style/ExampleTheme1"></activity>
+    </application>
+
+    <!-- Allow to connect with internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Network State Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Allow to access camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest>

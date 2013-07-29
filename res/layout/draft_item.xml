@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+	<!--  ListRow Left sied Thumbnail image -->
+	<!--  <LinearLayout android:id="@+id/thumbnail" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="3dip"		
+        android:layout_alignParentLeft="true"
+	    android:layout_marginRight="5dip">-->
+       
+	<!--  </LinearLayout>-->
+    <!-- checkbox item produk -->
+	    <CheckBox
+        android:id="@+id/draft_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+       
+        android:layout_centerVertical="true"
+         />
+	    
+	<!-- Nama Pengguna-->
+    <TextView
+        android:id="@+id/draft_product_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/draft_check"
+        android:layout_marginLeft="10dip"
+        android:textStyle="bold" 
+        android:textSize="16sp" 
+        android:clickable="true"  
+        android:text="Kertas Bekas Jelek"   
+       />
+    <TextView
+        android:id="@+id/draft_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/draft_product_title"
+        android:layout_marginLeft="10dip"
+        android:layout_toRightOf="@id/draft_check"
+        android:text="2013-07-04"
+        ></TextView>
+    
+    <TextView
+        android:id="@+id/draft_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/draft_product_title"
+        android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@id/draft_date"
+        android:text="15:03"
+        ></TextView>
+
+    <Button
+        android:id="@+id/draft_edit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@+id/draft_time"
+        android:layout_alignParentRight="true"
+        android:drawableTop="@drawable/content_edit" />
+    
+</RelativeLayout>

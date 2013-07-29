@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="150dip"
+    android:layout_margin="5dip"
+    android:background="#a30046"
+    android:orientation="horizontal"
+    android:padding="10dip" >
+
+    <ImageView
+        android:id="@+id/thumb"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:src="@drawable/gradient_bg" />
+
+    <Button
+        android:id="@+id/controlBtn"
+        android:layout_width="100dip"
+        android:layout_height="40dip"
+        android:layout_margin="10dip"
+        android:text="HAPUS"
+        android:textColor="#000000" />
+
+</LinearLayout>

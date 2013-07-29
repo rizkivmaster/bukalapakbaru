@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_bg"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+    
+    <TextView
+        android:id="@+id/title_product_nego"
+	    style="@style/product_name"
+	    android:layout_toRightOf="@+id/image_product_nego"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Product Name"
+        />
+    <!-- Detail Pembeli -->
+    <TextView
+	    android:id="@+id/lbl_pembeli"
+	    android:layout_below="@id/title_product_nego"
+	    android:layout_toRightOf="@id/image_product_nego"
+	    android:layout_width="80dp"
+	    android:layout_height="wrap_content"
+	    android:text="Buyer:" />
+    
+	<TextView
+	    android:id="@+id/val_pembeli"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/title_product_nego"
+	    android:layout_toRightOf="@id/lbl_pembeli"
+	    android:layout_marginLeft="5dp"
+	    android:text="Santo Amarto"
+	    android:textStyle="bold"
+	    ></TextView>
+	<!-- Detail Nego -->
+	
+    <TextView
+	    android:id="@+id/lbl_stocknego"
+	    android:layout_below="@id/lbl_pembeli"
+	    android:layout_toRightOf="@id/image_product_nego"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Jumlah Beli:" />
+    
+	<TextView
+	    android:id="@+id/val_stocknego"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/val_pembeli"
+	    android:layout_toRightOf="@id/lbl_stocknego"
+	    android:layout_marginLeft="5dp"
+	    android:text="1000"
+	    android:textStyle="bold"
+	    ></TextView>
+	<TextView
+	    android:id="@+id/lbl_harganego"
+	    android:layout_below="@id/lbl_stocknego"
+	    android:layout_toRightOf="@id/image_product_nego"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Harga Nego:" />
+    
+	<TextView
+	    android:id="@+id/val_harganego"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/val_stocknego"
+	    android:layout_toRightOf="@id/lbl_harganego"
+	    android:layout_marginLeft="5dp"
+	    android:text="Rp 1.000.000.000,00"
+	    android:textStyle="bold"
+	    ></TextView>
+	<TextView
+	    android:id="@+id/lbl_hargaasli"
+	    android:layout_below="@id/lbl_harganego"
+	    android:layout_toRightOf="@id/image_product_nego"
+	    android:layout_width="80dp"
+	    android:layout_height="wrap_content"
+	    android:text="Harga Asli:" />
+    
+	<TextView
+	    android:id="@+id/val_hargaasli"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/val_harganego"
+	    android:layout_toRightOf="@id/lbl_hargaasli"
+	    android:layout_marginLeft="5dp"
+	    android:text="Rp 5.000.000.000,00"
+	    android:textStyle="bold"
+	    ></TextView>
+	
+	<!-- Button Aksi Nego yang akan dilakukan -->
+	<Button
+	    android:id="@+id/btn_aksi_terima"
+	    android:layout_width="100dp"
+	    android:layout_height="35dp"
+	    android:layout_below="@+id/lbl_hargaasli"
+	    android:layout_marginTop="5dp"
+	    android:layout_toRightOf="@id/image_product_nego"
+	    android:background="@drawable/list_selector"
+	    android:text="TERIMA"
+	    android:textSize="12sp" />
+
+	<Button
+	    android:id="@+id/btn_aksi_tolak"
+	    android:layout_width="100dp"
+	    android:layout_height="35dp"
+	    android:layout_alignBaseline="@+id/btn_aksi_terima"
+	    android:layout_alignBottom="@+id/btn_aksi_terima"
+	    android:layout_alignRight="@+id/val_hargaasli"
+	    android:layout_toRightOf="@id/btn_aksi_terima"
+	    android:background="@drawable/list_selector"
+	    android:text="TOLAK"
+	    android:textSize="12sp" />
+
+	<ImageView
+	    android:id="@id/image_product_nego"
+	    android:layout_width="50dip"
+	    android:layout_height="50dip"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/lbl_pembeli"
+	    android:layout_marginRight="10dp"
+	    android:src="@drawable/rating" />
+    
+</RelativeLayout>

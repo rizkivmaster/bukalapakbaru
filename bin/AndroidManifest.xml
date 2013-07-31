@@ -44,6 +44,7 @@
         <activity 
             android:name="com.example.bukalapakdummy.UploadLaterFragment"
             android:theme="@style/ExampleTheme1"></activity>
+        <activity android:name="com.example.bukalapakdummy.KirimBarangActivity" android:theme="@style/ExampleTheme1"></activity>
     </application>
 
     <!-- Allow to connect with internet -->

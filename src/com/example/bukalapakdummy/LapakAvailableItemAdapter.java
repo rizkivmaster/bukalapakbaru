@@ -120,7 +120,6 @@ public class LapakAvailableItemAdapter extends BaseAdapter {
 		TextView prodStock = (TextView) arg1.findViewById(R.id.stock);
 		prodStock.setText(p.getStock() + " pcs");
 
-
 		final CheckBox check = (CheckBox) arg1.findViewById(R.id.checkBox1);
 		check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -136,7 +135,7 @@ public class LapakAvailableItemAdapter extends BaseAdapter {
 		if (showCheckboxes) {
 			check.setVisibility(CheckBox.VISIBLE);
 			arg1.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					checked[arg0] = !checked[arg0];
@@ -164,13 +163,13 @@ public class LapakAvailableItemAdapter extends BaseAdapter {
 					checked[arg0] = !checked[arg0];
 					check.setChecked(checked[arg0]);
 					notifyDataSetChanged();
-					ra.startActionMode(((LapakDijualFragment)parent).getCallback());
+					ra.startActionMode(((LapakDijualFragment) parent)
+							.getCallback());
 					return false;
 				}
 			});
 
 		}
-
 
 		return arg1;
 	}
@@ -183,14 +182,16 @@ public class LapakAvailableItemAdapter extends BaseAdapter {
 
 	public void dismissCheckbox() {
 		this.showCheckboxes = false;
-		if(checked!=null)checked = new boolean[checked.length];
+		if (checked != null)
+			checked = new boolean[checked.length];
 		notifyDataSetChanged();
 	}
 
 	public void deleteProduct() {
 		final ArrayList<OnlineProduct> list = new ArrayList<OnlineProduct>();
 		for (int ii = 0; ii < checked.length; ii++) {
-			if(checked[ii])	list.add(productList.get(ii));
+			if (checked[ii])
+				list.add(productList.get(ii));
 		}
 		AlertDialog.Builder alert = new AlertDialog.Builder(context);
 		alert.setTitle("Hapus");
@@ -254,12 +255,12 @@ public class LapakAvailableItemAdapter extends BaseAdapter {
 		task.execute();
 
 	}
-	
-	
+
 	public void soldProduct() {
 		final ArrayList<OnlineProduct> list = new ArrayList<OnlineProduct>();
 		for (int ii = 0; ii < checked.length; ii++) {
-			if(checked[ii])	list.add(productList.get(ii));
+			if (checked[ii])
+				list.add(productList.get(ii));
 		}
 		AlertDialog.Builder alert = new AlertDialog.Builder(context);
 		alert.setTitle("Set Terjual");
@@ -296,7 +297,7 @@ public class LapakAvailableItemAdapter extends BaseAdapter {
 					soldProduct(onList, position + 1);
 				} else {
 					pd.dismiss();
-					
+
 					dismissCheckbox();
 					refreshView();
 					Toast.makeText(context, "Barang berhasil diset terjual",
@@ -325,33 +326,21 @@ public class LapakAvailableItemAdapter extends BaseAdapter {
 	}
 
 	public void refreshView() {
-		final ListLapakDijual task = new ListLapakDijual(context,
-				credential);
+		final ListLapakDijual task = new ListLapakDijual(context, credential);
 		task.setAPIListener(new APIListener<ArrayList<AvailableProduct>>() {
-			ProgressDialog pd;
+			ProgressDialog pd = new ProgressDialog(context);
 
 			@Override
 			public void onFailure(Exception e) {
-				pd.dismiss();
+				pd.cancel();
 			}
 
 			@Override
 			public void onExecute() {
-				pd = new ProgressDialog(context);
-				pd.setTitle("Lapak");
-
-				pd.setMessage("Tunggu sebentar, sedang mengambil...");
-
-				pd.setCancelable(true);
-				pd.setOnCancelListener(new OnCancelListener() {
-
-					@Override
-					public void onCancel(DialogInterface dialog) {
-						task.cancel();
-					}
-				});
-
-				pd.setIndeterminate(false);
+				pd.setTitle("Lapak Dijual");
+				pd.setMessage("Harap menunggu...");
+				pd.setCancelable(false);
+				pd.setIndeterminate(true);
 				pd.show();
 			}
 

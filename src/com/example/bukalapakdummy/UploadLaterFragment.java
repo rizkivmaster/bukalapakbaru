@@ -3,10 +3,13 @@ package com.example.bukalapakdummy;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 import listener.APIListener;
 import listener.ProductUploaderListener;
 import model.business.Attribute;
+import model.business.CheckableAttribute;
 import model.business.Credential;
 import model.business.CredentialEditor;
 import model.business.DraftedLocalProduct;
@@ -75,8 +78,8 @@ public class UploadLaterFragment extends SherlockActivity {
 	CheckBox kurirPOS;
 	LinearLayout len;
 	LinearLayout listImages;
-	HashMap<String, String> attribs;
-	HashMap<String, View> specs;
+	HashMap<String, Attribute> attribs;
+	HashMap<View, Attribute> specs;
 	String category_id;
 	ImageView imgview;
 	// ImageUploadAdapter imageAdapter;
@@ -99,8 +102,8 @@ public class UploadLaterFragment extends SherlockActivity {
 		super.onCreate(savedInstanceState);
 		context = this;
 		credential = CredentialEditor.loadCredential(this);
-		attribs = new HashMap<String, String>();
-		specs = new HashMap<String, View>();
+		attribs = new HashMap<String, Attribute>();
+		specs = new HashMap<View, Attribute>();
 		setContentView(R.layout.view_product_upload_main);
 
 		len = (LinearLayout) findViewById(R.id.listSpecs);
@@ -186,27 +189,72 @@ public class UploadLaterFragment extends SherlockActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+//	private void createSpecs(ArrayList<Attribute> attr,
+//			HashMap<String, String> spec) {
+//		for (Attribute attribute : attr) {
+//			String field;
+//			String disp;
+//			field = attribute.getFieldName();
+//			disp = attribute.getDisplayName();
+//			attribs.put(field, disp);
+//			LayoutInflater inflater = LayoutInflater.from(context);
+//			View view = inflater.inflate(R.layout.view_product_upload_field,
+//					null);
+//			TextView tx = (TextView) view.findViewById(R.id.field_text);
+//			tx.setText(disp);
+//			View vw = null;
+//			if (attribute instanceof StringAttribute) {
+//				EditText et = (EditText) view.findViewById(R.id.field_edittext);
+//				et.setVisibility(EditText.VISIBLE);
+//				et.setText(spec.get(attribute.getFieldName()));
+//				vw = et;
+//			} else if (attribute instanceof SelectableAttribute) {
+//
+//				final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+//						context, android.R.layout.simple_spinner_item);
+//				ArrayList<String> list = ((SelectableAttribute) attribute)
+//						.getOptions();
+//				for (int ii = 0; ii < list.size(); ii++) {
+//					adapter.add(list.get(ii));
+//				}
+//				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//				Spinner spin = (Spinner) view.findViewById(R.id.field_spinner);
+//				spin.setAdapter(adapter);
+//				spin.setSelection(list.indexOf(spec.get(attribute
+//						.getFieldName())));
+//				spin.setVisibility(Spinner.VISIBLE);
+//				vw = spin;
+//			}
+//			tx.setTextColor(Color.BLACK);
+//			len.addView(view);
+//			specs.put(field, vw);
+//		}
+//		len.requestLayout();
+//	}
 	private void createSpecs(ArrayList<Attribute> attr,
-			HashMap<String, String> spec) {
+			HashMap<String, Set<String>> hashMap) {
 		for (Attribute attribute : attr) {
 			String field;
 			String disp;
 			field = attribute.getFieldName();
 			disp = attribute.getDisplayName();
-			attribs.put(field, disp);
+			attribs.put(field, attribute);
 			LayoutInflater inflater = LayoutInflater.from(context);
 			View view = inflater.inflate(R.layout.view_product_upload_field,
 					null);
 			TextView tx = (TextView) view.findViewById(R.id.field_text);
 			tx.setText(disp);
+			tx.setTextColor(Color.BLACK);
 			View vw = null;
 			if (attribute instanceof StringAttribute) {
 				EditText et = (EditText) view.findViewById(R.id.field_edittext);
 				et.setVisibility(EditText.VISIBLE);
-				et.setText(spec.get(attribute.getFieldName()));
-				vw = et;
+				Set<String> value = hashMap.get(attribute.getFieldName());
+				for (String string : value) {
+					et.setText(string);	
+				}
+				specs.put(et, attribute);
 			} else if (attribute instanceof SelectableAttribute) {
-
 				final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 						context, android.R.layout.simple_spinner_item);
 				ArrayList<String> list = ((SelectableAttribute) attribute)
@@ -217,14 +265,28 @@ public class UploadLaterFragment extends SherlockActivity {
 				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 				Spinner spin = (Spinner) view.findViewById(R.id.field_spinner);
 				spin.setAdapter(adapter);
-				spin.setSelection(list.indexOf(spec.get(attribute
-						.getFieldName())));
+				Set<String> value = hashMap.get(attribute.getFieldName());
+				for (String string : value) {
+					spin.setSelection(list.indexOf(string));
+				}
 				spin.setVisibility(Spinner.VISIBLE);
-				vw = spin;
+				specs.put(spin, attribute);
 			}
-			tx.setTextColor(Color.BLACK);
+			else if(attribute instanceof CheckableAttribute)
+			{
+				Set<String> list = ((CheckableAttribute) attribute)
+						.getOptions();
+				Set<String> values = hashMap.get(attribute.getFieldName());
+				for (String string : list) {
+					CheckBox c = new CheckBox(context);
+					c.setText(string);
+					if(values.contains(string)) c.isChecked();
+					specs.put(c, attribute);
+					((LinearLayout) view).addView(c);
+				}
+			}
+			
 			len.addView(view);
-			specs.put(field, vw);
 		}
 		len.requestLayout();
 	}
@@ -374,15 +436,34 @@ public class UploadLaterFragment extends SherlockActivity {
 			product.setCondition(ProductCondition.NEW);
 		}
 		product.setNegotiable(nego.isChecked());
-		HashMap<String, String> temp = new HashMap<String, String>();
-		for (String k : attribs.keySet()) {
-			View v = specs.get(k);
+		HashMap<String, Set<String>> temp = new HashMap<String, Set<String>>();
+		for (View v : specs.keySet()) {
+			Attribute a = specs.get(v);
 			if (v instanceof EditText) {
 				EditText e = (EditText) v;
-				temp.put(k, e.getText().toString());
+				String result = e.getText().toString();
+				Set<String> value = new HashSet<String>();
+				value.add(result);
+				temp.put(a.getFieldName(), value);
 			} else if (v instanceof Spinner) {
 				Spinner s = (Spinner) v;
-				temp.put(k, s.getSelectedItem().toString());
+				String result = s.getSelectedItem().toString();
+				Set<String> value = new HashSet<String>();
+				value.add(result);
+				temp.put(a.getFieldName(), value);
+			} else if (v instanceof CheckBox) {
+				CheckBox c = (CheckBox) v;
+				if (c.isChecked()) {
+					String result = c.getText().toString();
+					if (temp.containsKey(a.getFieldName())) {
+						Set<String> value = temp.get(a.getFieldName());
+						value.add(result);
+					} else {
+						Set<String> value = new HashSet<String>();
+						value.add(result);
+						temp.put(a.getFieldName(), value);
+					}
+				}
 			}
 		}
 		product.setSpecs(temp);

@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-    
+   
     <ListView
         android:id="@+id/transaction_list"
         android:layout_width="fill_parent"
@@ -12,5 +12,11 @@
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" />
 
-
+<TextView
+    android:id="@+id/empty"
+    android:text="Empty"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    />
 </LinearLayout>

@@ -160,7 +160,7 @@
                 android:padding="10dp"
                 android:textColor="#fff"
                 android:inputType="number"
-			    android:hint="ketik perkiraan berat"
+			    android:text="0"
 			    android:layout_below="@+id/perkiraanberat_text"></EditText>
    	
    	

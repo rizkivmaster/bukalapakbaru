@@ -338,7 +338,7 @@ public class LapakSoldItemAdapter extends BaseAdapter {
 			@Override
 			public void onExecute() {
 				pd.setTitle("Hapus Barang");
-				pd.setMessage("Sedang merelist. Tunggu sebentar...");
+				pd.setMessage("Harap menunggu...");
 				pd.setIndeterminate(false);
 				pd.setCancelable(true);
 				pd.show();
@@ -356,26 +356,16 @@ public class LapakSoldItemAdapter extends BaseAdapter {
 
 			@Override
 			public void onFailure(Exception e) {
-				pd.dismiss();
+				pd.cancel();
 			}
 
 			@Override
 			public void onExecute() {
 				pd = new ProgressDialog(context);
-				pd.setTitle("Lapak");
-
-				pd.setMessage("Tunggu sebentar, sedang mengambil...");
-
-				pd.setCancelable(true);
-				pd.setOnCancelListener(new OnCancelListener() {
-
-					@Override
-					public void onCancel(DialogInterface dialog) {
-						task.cancel();
-					}
-				});
-
-				pd.setIndeterminate(false);
+				pd.setTitle("Lapak Tidak Dijual");
+				pd.setMessage("Harap menunggu...");
+				pd.setCancelable(false);
+				pd.setIndeterminate(true);
 				pd.show();
 			}
 

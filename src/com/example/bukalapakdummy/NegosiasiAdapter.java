@@ -3,12 +3,12 @@ package com.example.bukalapakdummy;
 import java.util.ArrayList;
 
 import listener.APIListener;
-import model.business.AcceptedNegotiation;
+import model.business.AvailableNegotiation;
+import model.business.BrokenNegotiation;
 import model.business.Credential;
 import model.business.CredentialEditor;
 import model.business.Negotiation;
-import model.business.RejectedNegotiation;
-import model.business.UnflaggedNegotiation;
+import com.bukalapakdummy.R;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -23,8 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import api.AcceptNegotiation;
 import api.RejectNegotiation;
-
-import com.bukalapakdummy.R;
 
 public class NegosiasiAdapter extends BaseAdapter {
 
@@ -72,64 +70,75 @@ public class NegosiasiAdapter extends BaseAdapter {
 				.findViewById(R.id.val_hargaasli);
 		TextView harganego = (TextView) convertView
 				.findViewById(R.id.val_harganego);
-		TextView namaProduk = (TextView) convertView.
-				findViewById(R.id.title_product_nego);
-		Button terimaNego = (Button) convertView.
-				findViewById(R.id.btn_aksi_terima);
-		Button tolakNego = (Button) convertView.
-				findViewById(R.id.btn_aksi_tolak);
-		if(negotiation instanceof UnflaggedNegotiation) {
+		TextView namaProduk = (TextView) convertView
+				.findViewById(R.id.title_product_nego);
+		Button terimaNego = (Button) convertView
+				.findViewById(R.id.btn_aksi_terima);
+		Button tolakNego = (Button) convertView
+				.findViewById(R.id.btn_aksi_tolak);
+		switch (negotiation.getStatus()) {
+		case ACCEPTED:
+			terimaNego.setTextColor(Color.GREEN);
+			tolakNego.setActivated(false);
+			tolakNego.setClickable(false);
+			break;
+		case REJECTED:
+			tolakNego.setTextColor(Color.RED);
+			terimaNego.setActivated(false);
+			terimaNego.setClickable(false);
+			break;
+		case WAITING:
 			terimaNego.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					acceptNego(negotiation);
 				}
 			});
 			tolakNego.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					rejectNego(negotiation);
 				}
 			});
+			break;
 		}
-		else if(negotiation instanceof AcceptedNegotiation)
+		if(negotiation instanceof AvailableNegotiation)
 		{
-			terimaNego.setTextColor(Color.GREEN);
-			tolakNego.setActivated(false);
+			hargaasli.setText(((AvailableNegotiation)negotiation).getNormalPrice() + "");
+			namaProduk.setText(((AvailableNegotiation)negotiation).getProductName() + "");
 		}
-		else if(negotiation instanceof RejectedNegotiation)
+		else if(negotiation instanceof BrokenNegotiation)
 		{
-			tolakNego.setTextColor(Color.RED);
-			terimaNego.setActivated(false);
+			hargaasli.setText("Barang telah dihapus");
+			hargaasli.setTextColor(Color.RED);
+			namaProduk.setText("Barang telah dihapus");
+			namaProduk.setTextColor(Color.RED);
 		}
-
-
-		jumlahbeli.setText(negotiation.getQuantity()+"");
-		buyer.setText(negotiation.getBuyerName()+"");
-		hargaasli.setText(negotiation.getNormalPrice()+"");
-		harganego.setText(negotiation.getNegoPrice()+"");
-		namaProduk.setText(negotiation.getProductName()+"");
+		jumlahbeli.setText(negotiation.getQuantity() + "");
+		buyer.setText(negotiation.getBuyerName() + "");
+		harganego.setText(negotiation.getNegoPrice() + "");
 		return convertView;
 	}
-	
-	private void acceptNego(Negotiation n)
-	{
-		AcceptNegotiation task = new AcceptNegotiation(context, credential, (UnflaggedNegotiation) n);
-		task.setAPIListener(new APIListener<AcceptedNegotiation>() {
+
+	private void acceptNego(Negotiation n) {
+		AcceptNegotiation task = new AcceptNegotiation(context, credential,n);
+		task.setAPIListener(new APIListener<Negotiation>() {
 			ProgressDialog pd = new ProgressDialog(context);
+
 			@Override
-			public void onSuccess(AcceptedNegotiation res) {
+			public void onSuccess(Negotiation res) {
 				pd.dismiss();
-				Toast.makeText(context, "Berhasil diubah", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "Berhasil diubah", Toast.LENGTH_SHORT)
+						.show();
 			}
-			
+
 			@Override
 			public void onFailure(Exception e) {
 				pd.dismiss();
 			}
-			
+
 			@Override
 			public void onExecute() {
 				pd.setTitle("Terima Negosiasi");
@@ -141,23 +150,24 @@ public class NegosiasiAdapter extends BaseAdapter {
 		});
 		task.execute();
 	}
-	
-	private void rejectNego(Negotiation n)
-	{
-		RejectNegotiation task = new RejectNegotiation(context, credential, (UnflaggedNegotiation) n);
-		task.setAPIListener(new APIListener<RejectedNegotiation>() {
+
+	private void rejectNego(Negotiation n) {
+		RejectNegotiation task = new RejectNegotiation(context, credential,n);
+		task.setAPIListener(new APIListener<Negotiation>() {
 			ProgressDialog pd = new ProgressDialog(context);
+
 			@Override
-			public void onSuccess(RejectedNegotiation res) {
+			public void onSuccess(Negotiation res) {
 				pd.dismiss();
-				Toast.makeText(context, "Berhasil diubah", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "Berhasil diubah", Toast.LENGTH_SHORT)
+						.show();
 			}
-			
+
 			@Override
 			public void onFailure(Exception e) {
 				pd.dismiss();
 			}
-			
+
 			@Override
 			public void onExecute() {
 				pd.setTitle("Tolak Negosiasi");

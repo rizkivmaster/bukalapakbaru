@@ -14,12 +14,11 @@
         >
         
         <LinearLayout
-        android:id="@+id/panel_data_trans"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="3dp"
-        >
+            android:id="@+id/panel_data_trans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:orientation="horizontal" >
       
 	<!-- Nama Barang-->
     <TextView
@@ -30,45 +29,47 @@
         android:text="@string/product_name"
        />
     
-    <!-- jumlah yang dibeli-->
+    <!-- jumlah yang dibeli
     
    <TextView
        android:id="@+id/total_item_trans"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginLeft="10dp"
-      
+       android:textColor="#000000"
        android:text="x1"
        ></TextView>
+   -->
    
-   <!-- harga -->
-	<TextView 
-	    android:id="@+id/price_trans"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_marginLeft="10dp"
-	    
-	    android:text="Rp 10.000"
-	    /></LinearLayout>
-
-    	
+	</LinearLayout>
    <!-- Nomor transaksi -->
    <TextView
 	    android:id="@+id/trans_id"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	   android:textColor="#636363"
+	    android:textColor = "#000000"
 	    android:text="130701133420" 
-	    android:textSize="12sp"
+	    android:layout_marginBottom = "3dp"
 	    ></TextView>
-	<!-- tanggal transaksi -->
+   
+    	<!-- harga -->
+        <TextView 
+	    android:id="@+id/price_trans"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginBottom ="3dp"
+	    android:textColor = "#000000"
+	    android:text="Total: Rp 10.000"
+	    />
+   
+	<!-- tanggal transaksi 
 	<TextView
 	    android:id="@+id/trans_date"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:textColor="#636363"
 	    android:text="18/10/2012    11:27"
-	    ></TextView>
+	    ></TextView>-->
 	
 	<!-- Status -->
 	
@@ -86,9 +87,10 @@
 	    
 	    android:text="Status:"
 	    android:textStyle="bold"
+	    android:textColor="#000000"
 	    ></TextView>
 	<ImageView
-	    android:id="@+id/trans_ordered" 
+	    android:id="@+id/trans_pending" 
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:src="@drawable/payment_statuses_016"
@@ -103,7 +105,7 @@
 	        ></ImageView>
 	
 	<ImageView
-	    android:id="@+id/trans_sent" 
+	    android:id="@+id/trans_delivered" 
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:src="@drawable/payment_statuses_009"
@@ -111,14 +113,14 @@
 	
 
 	<ImageView
-	    android:id="@+id/trans_arrived" 
+	    android:id="@+id/trans_received" 
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:src="@drawable/payment_statuses_004"
 	        ></ImageView>
 	
 	<ImageView
-	    android:id="@+id/trans_transfered" 
+	    android:id="@+id/trans_remitted" 
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:src="@drawable/payment_statuses_005"
@@ -131,16 +133,17 @@
 	  <Button
 	      android:id="@+id/trans_btnsend"
 	      android:layout_width="100dp"
-	      android:layout_height="40dp"
+	      android:layout_height="50dp"
 	      android:layout_below="@id/price_trans"
-	  	  android:layout_toRightOf="@id/trans_date"
+	  	 
 	  	  android:layout_alignParentRight="true"
 	  	  android:layout_centerVertical="true"
 	  	  android:layout_marginLeft="100dp"
 	  	  android:drawableLeft="@drawable/payment_statuses_019"
 	      android:layout_marginRight="20dp"
 	      android:text="Kirim Brg"
-	      android:textSize="10sp" />
+	      android:focusable="false"
+	      android:textSize="12sp" />
 
 	    <!--  Rightend Arrow    -->
      <ImageView android:layout_width="wrap_content"

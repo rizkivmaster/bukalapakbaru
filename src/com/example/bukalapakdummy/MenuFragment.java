@@ -84,7 +84,7 @@ public class MenuFragment extends ListFragment {
 			} else if ((item.title).equals("Lapak Tidak Dijual")) {
 				newContent = new LapakTidakDijualFragment();
 			} else if ((item.title).equals("Transaksi")) {
-				newContent = new TransaksiFragment();
+				newContent = new TransactionsFragment();
 			} else if ((item.title).equals("Pesan")) {
 				newContent = new PesanFragment();
 			} else if ((item.title).equals("Negosiasi")) {

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wait_message">Harap Menunggu</string>
+    <string name="title_set_sold">Set Terjual</string>
+    <string name="title_set_available">Set Dijual</string>
+    <string name="title_publish_product">Publikasi Produk</string>
+    <string name="title_update_product">Ubah Produk</string>
+    <string name="btn_share_product">Publikasikan</string>
+    <string name="btn_set_sold">Set Terjual</string>
+    <string name="btn_edit_product">Ubah</string>
+    <string name="title_view_product">Detail Produk</string>
+</resources>

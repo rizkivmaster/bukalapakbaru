@@ -4,6 +4,17 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 	 <!-- Include Header -->
+
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="ketik untuk sortir" >
+
+        <requestFocus />
+    </EditText>
+
     <ListView
         android:id="@+id/nego_list"
         android:layout_width="fill_parent"

@@ -5,132 +5,121 @@
     android:background="@drawable/list_selector"
     android:orientation="horizontal"
     android:padding="5dip" >
-   
+
     <LinearLayout
         android:id="@+id/panel_data_trans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        
+        android:orientation="vertical" >
+
         <LinearLayout
             android:id="@+id/panel_data_trans"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:orientation="horizontal" >
-      
-	<!-- Nama Barang-->
-    <TextView
-        android:id="@+id/product_trans"
-        style="@style/product_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/product_name"
-       />
-    
-    <!-- jumlah yang dibeli
-    
-   <TextView
-       android:id="@+id/total_item_trans"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginLeft="10dp"
-       android:textColor="#000000"
-       android:text="x1"
-       ></TextView>
-   -->
-   
-	</LinearLayout>
-   <!-- Nomor transaksi -->
-   <TextView
-	    android:id="@+id/trans_id"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:textColor = "#000000"
-	    android:text="130701133420" 
-	    android:layout_marginBottom = "3dp"
-	    ></TextView>
-   
-    	<!-- harga -->
-        <TextView 
-	    android:id="@+id/price_trans"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_marginBottom ="3dp"
-	    android:textColor = "#000000"
-	    android:text="Total: Rp 10.000"
-	    />
-   
-	<!-- tanggal transaksi 
+
+            <!-- Nama Barang -->
+
+            <TextView
+                android:id="@+id/product_trans"
+                style="@style/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/product_name" />
+
+            
+        </LinearLayout>
+        <!-- Nomor transaksi -->
+
+        <TextView
+            android:id="@+id/trans_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="130701133420"
+            android:textColor="#000000" >
+        </TextView>
+
+        <!-- harga -->
+
+        <TextView
+            android:id="@+id/price_trans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="Total: Rp 10.000"
+            android:textColor="#000000" />
+
+        <!--
+    tanggal transaksi 
 	<TextView
 	    android:id="@+id/trans_date"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:textColor="#636363"
 	    android:text="18/10/2012    11:27"
-	    ></TextView>-->
-	
-	<!-- Status -->
-	
-	<LinearLayout
-	    android:orientation="horizontal"
-	    android:layout_height="wrap_content"
-	    android:layout_width="wrap_content"
-	   
-	    >
-	
-	<TextView
-	    android:id="@+id/trans_status"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    
-	    android:text="Status:"
-	    android:textStyle="bold"
-	    android:textColor="#000000"
 	    ></TextView>
-	<ImageView
-	    android:id="@+id/trans_pending" 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/payment_statuses_016"
-	  
-	        ></ImageView>
-	
-	<ImageView
-	    android:id="@+id/trans_paid" 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/payment_statuses_018"
-	        ></ImageView>
-	
-	<ImageView
-	    android:id="@+id/trans_delivered" 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/payment_statuses_009"
-	        ></ImageView>
-	
+        -->
 
-	<ImageView
-	    android:id="@+id/trans_received" 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/payment_statuses_004"
-	        ></ImageView>
-	
-	<ImageView
-	    android:id="@+id/trans_remitted" 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/payment_statuses_005"
-	        ></ImageView>
-	</LinearLayout>
-	
-	</LinearLayout>
-	<!-- Tombol kirim barang -->
 
-	  <Button
+        <!-- Status -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/trans_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status:"
+                android:textColor="#000000"
+                android:textStyle="bold" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/trans_pending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_statuses_016" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/trans_paid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_statuses_018" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/trans_delivered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_statuses_009" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/trans_received"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_statuses_004" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/trans_remitted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_statuses_005" >
+            </ImageView>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Tombol kirim barang -->
+
+
+    <!--
+           <Button
 	      android:id="@+id/trans_btnsend"
 	      android:layout_width="100dp"
 	      android:layout_height="50dp"
@@ -144,13 +133,17 @@
 	      android:text="Kirim Brg"
 	      android:focusable="false"
 	      android:textSize="12sp" />
+    -->
 
-	    <!--  Rightend Arrow    -->
-     <ImageView android:layout_width="wrap_content"
-     	android:layout_height="wrap_content"
-     	android:src="@drawable/arrow"
-     	android:layout_alignParentRight="true"
-     	android:layout_centerVertical="true"
-     	android:layout_marginRight="5dp"
-     	/>
+
+    <!-- Rightend Arrow -->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/arrow" />
+
 </RelativeLayout>

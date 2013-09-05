@@ -5,6 +5,19 @@
     android:layout_height="fill_parent"
     android:background="#B5B5B5"
     >
+
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:drawableLeft="@drawable/action_search"
+        android:hint="ketik untuk sortir" >
+        
+
+        <requestFocus />
+    </EditText>
+
 <GridView
     android:id="@+id/lapak_grid"
 	android:layout_width="match_parent"

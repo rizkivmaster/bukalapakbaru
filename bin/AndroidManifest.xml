@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.bukalapakdummy"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bukalapakdummy"
     android:installLocation="preferExternal"
     android:versionCode="1"
-    android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -14,37 +15,73 @@
         android:label="@string/app_name"
         android:theme="@style/ExampleTheme" >
         <activity
-            android:name="com.example.bukalapakdummy.LoginActivity"
-            android:theme="@android:style/Theme.NoTitleBar" >
-                        <intent-filter>
+            android:name="bukalapak.view.login.LoginActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
-        </activity>
-        <activity android:name="com.example.bukalapakdummy.ResponsiveUIActivity" >
         </activity>
         <activity
-            android:name="com.example.bukalapakdummy.UploadFragment"
-            android:label="@string/app_name" 
-            android:theme="@style/ExampleTheme1">
+            android:name="bukalapak.view.MainWindowActivity"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
-        <activity android:name="com.example.bukalapakdummy.ConversationActivity" 
+        <activity
+            android:name="bukalapak.view.product.ProductDetail"
+            android:theme="@style/ExampleTheme1" >
+        </activity>
+        <activity
+            android:name="bukalapak.view.upload.UploadFragment"
+            android:label="@string/app_name"
+            android:theme="@style/ExampleTheme1" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="bukalapak.view.message.conversation.ConversationActivity"
             android:theme="@style/ExampleTheme1"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
         </activity>
-        <activity android:name="com.example.bukalapakdummy.UpdateFragment" 
-            android:theme="@style/ExampleTheme1">
+        <activity
+            android:name="bukalapak.view.update.UpdateFragment"
+            android:theme="@style/ExampleTheme1" >
         </activity>
         <activity
             android:name="com.bukalapakdummy.MainActivity"
             android:label="@string/title_activity_main" >
         </activity>
-        <activity 
-            android:name="com.example.bukalapakdummy.UploadLaterFragment"
-            android:theme="@style/ExampleTheme1"></activity>
-        <activity android:name="com.example.bukalapakdummy.KirimBarangActivity" android:theme="@style/ExampleTheme1"></activity>
+        <activity
+            android:name="bukalapak.view.UploadLaterFragment"
+            android:theme="@style/ExampleTheme1" >
+        </activity>
+        <activity
+            android:name="bukalapak.view.transaction.detail.KirimBarangActivity"
+            android:theme="@style/ExampleTheme1" >
+        </activity>
+
+        <service android:name="notification.NotificationService" />
+        <!--
+             <receiver
+            android:name="notificatnotification.NotificationService  </receiver>
+        -->
+        <activity
+            android:name="bukalapak.view.transaction.detail.TransactionDetail"
+            android:theme="@style/ExampleTheme1" >
+        </activity>
     </application>
 
     <!-- Allow to connect with internet -->
@@ -56,5 +93,6 @@
     <!-- Allow to access camera -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
 </manifest>

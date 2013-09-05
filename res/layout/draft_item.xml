@@ -6,46 +6,52 @@
     android:orientation="horizontal"
     android:padding="5dip" >
 
-	<!--  ListRow Left sied Thumbnail image -->
-	<!--  <LinearLayout android:id="@+id/thumbnail" 
+    <!-- ListRow Left sied Thumbnail image -->
+    <!--
+          <LinearLayout android:id="@+id/thumbnail" 
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:padding="3dip"		
         android:layout_alignParentLeft="true"
-	    android:layout_marginRight="5dip">-->
-       
-	<!--  </LinearLayout>-->
+	    android:layout_marginRight="5dip">
+    -->
+
+
+    <!-- </LinearLayout> -->
     <!-- checkbox item produk -->
-	    <CheckBox
-        android:id="@+id/draft_check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"      
-       
-        android:layout_centerVertical="true"
-         />
-	    
-	<!-- Nama Pengguna-->
+
+    <Button
+        android:id="@+id/draft_delete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/list_selector"
+        android:drawableTop="@drawable/mini_trash"
+        android:paddingTop="3dp"
+        android:textSize="12sp" />
+
+    <!-- Nama Pengguna -->
+
     <TextView
         android:id="@+id/draft_product_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/draft_check"
         android:layout_marginLeft="10dip"
-        android:textStyle="bold" 
-        android:textSize="16sp" 
-        android:clickable="true"  
-        android:text="Kertas Bekas Jelek"   
-       />
+        android:layout_toRightOf="@id/draft_delete"
+        android:clickable="true"
+        android:text="Kertas Bekas Jelek"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/draft_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/draft_product_title"
         android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@id/draft_check"
-        android:text="2013-07-04"
-        ></TextView>
-    
+        android:layout_toRightOf="@id/draft_delete"
+        android:text="2013-07-04" >
+    </TextView>
+
     <TextView
         android:id="@+id/draft_time"
         android:layout_width="wrap_content"
@@ -53,8 +59,8 @@
         android:layout_below="@id/draft_product_title"
         android:layout_marginLeft="5dip"
         android:layout_toRightOf="@id/draft_date"
-        android:text="15:03"
-        ></TextView>
+        android:text="15:03" >
+    </TextView>
 
     <Button
         android:id="@+id/draft_edit"
@@ -63,5 +69,5 @@
         android:layout_alignBottom="@+id/draft_time"
         android:layout_alignParentRight="true"
         android:drawableTop="@drawable/content_edit" />
-    
+
 </RelativeLayout>

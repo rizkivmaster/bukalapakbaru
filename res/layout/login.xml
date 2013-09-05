@@ -44,55 +44,58 @@
 		    android:padding="10dip" >
 
 		    <!-- Email Label -->
-
-		    <TextView
-		        android:id="@+id/text_email"
-		        android:layout_width="fill_parent"
+		    <LinearLayout 
+		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:text="Email or Username"
-		        android:textColor="#FFFFFF" />
-
-		    <EditText
-		        android:id="@+id/login_email_username"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_marginBottom="20dip"
-		        android:layout_marginTop="5dip"
-		        android:inputType="text"
+		        android:orientation="vertical"
+		        android:background="@drawable/rounded_normal_corner">
 		        
-		        android:singleLine="true" />
+		        <EditText
+			        android:id="@+id/login_email_username"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginBottom="20dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="10dip"
+			        android:inputType="text"
+			        android:hint="Username atau E-mail"
+			        android:background="@null"
+			        android:singleLine="true" />
+		        
+	
+			    <EditText
+			        android:id="@+id/login_password"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="5dip"
+			        android:layout_marginBottom="10dip"
+			        android:layout_marginLeft="10dip"
+			        android:layout_marginRight="10dip"
+			        android:inputType="textPassword"
+			        android:background="@null"
+			        android:hint="Password"
+			        android:singleLine="true" >
+			        <requestFocus />
+			        </EditText>
+			     <View
+				    android:layout_width="fill_parent"
+				    android:layout_height="1dp"
+				    android:background="@android:color/darker_gray"/>
+			   	<!-- Login button -->
 
-		    <!-- Password Label -->
-
-		    <TextView
-		        android:id="@+id/text_password"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:text="Password"
-		        android:textColor="#FFFFFF" />
-
-		    <EditText
-		        android:id="@+id/login_password"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_marginTop="5dip"
-		        android:inputType="textPassword"
-		        android:singleLine="true" >
-		        <requestFocus />
-		        </EditText>
-
-		    <!-- Login button -->
-
-		    <Button
-		        android:id="@+id/btnLogin"
-		        android:layout_width="150dp"
-		        android:layout_height="40dp"
-		        android:layout_marginBottom="10dip"
-		        android:layout_marginTop="10dip"
-		        android:layout_weight="0.10"
-		        android:background="@drawable/list_selector"
-		        android:text="Login" />
-
+			    <Button
+			        android:id="@+id/btnLogin"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginBottom="10dip"
+			        android:layout_marginTop="10dip"
+			        android:layout_weight="0.10"
+			        android:background="@null"
+			        android:textStyle="bold"
+			        android:text="Login" />
+		    </LinearLayout>
+		    
 		    <!-- Link to Lupa Password -->
 
 		    <TextView
@@ -100,7 +103,7 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_marginBottom="5dip"
-		        android:layout_marginTop="5dip"
+		        android:layout_marginTop="15dip"
 		        android:text="Lupa Password"
 		        android:textColor="#FFFFFF"
 		        android:textSize="15dip" />

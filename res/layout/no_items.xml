@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Tidak ada"
+    android:textColor="#FEFEFE"
+    android:textStyle="italic|bold"
+    android:id="@+id/no_item"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal" >
+
+</TextView>

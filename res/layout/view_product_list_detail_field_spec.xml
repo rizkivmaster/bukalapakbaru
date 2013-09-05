@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="60dip"
+    android:layout_gravity="top"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+	        android:id="@+id/lbl_desckategori"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:text="Kategori"
+	        android:textStyle="bold" />
+    
+	    <TextView
+	        android:id="@+id/val_desckategori"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="150dp"
+	        android:text="MTB ;alalalala" />
+    
+    </RelativeLayout>
+    <!-- label kategori -->
+    
+    <!-- value kategori -->
+
+</LinearLayout>

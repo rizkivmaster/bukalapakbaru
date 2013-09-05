@@ -53,10 +53,11 @@
         android:layout_below="@id/msg_sender"
         android:textColor="#343434"
         android:textSize="14sp"
-        
+        android:autoLink="web"
         android:layout_marginTop="1dip"
         android:layout_toRightOf="@+id/thumbnail"
-        android:text="Hello dfmsdkjfdjfsdjfjsdkjkkjfkemkmdmf,dmkwkkjdhfja" />
+        android:text="t;tidak tersedia>"
+        />
 </RelativeLayout>
 
 	

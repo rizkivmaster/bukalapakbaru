@@ -1,349 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    
-     >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <RelativeLayout
         android:id="@+id/paneltrans_desc"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-         >
- <!-- panel gambar produk -->
- <RelativeLayout android:id="@+id/paneltrans_thumbnail" 
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:padding="3dip"		
-        android:background="@drawable/image_bg"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="5dp"
-	    android:layout_marginRight="5dip">
-	    
-	    <!-- gambar produk -->	    
-	    <ImageView     
-			android:id="@+id/desc_transimg"   
-	        android:layout_width="100dip"
-	        android:layout_height="100dip"
-	        android:src="@drawable/rating"/>
-</RelativeLayout>
+        android:layout_height="wrap_content" >
 
- 
- <!-- nama produk -->
- <TextView
-     android:id="@+id/trans_namaproduk"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_toRightOf="@id/paneltrans_thumbnail"
-     android:layout_marginLeft="10dp"
-     android:layout_marginTop="10dp"
-     android:text="Kertas"
-     android:textStyle="bold"
-     android:textColor="#a30046"
-     android:textSize="25sp"
-     ></TextView>
- 
- <!-- nomor transaksi produk -->
- <!-- 
- <TextView
-     android:id="@+id/trans_no"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_toRightOf="@id/trans_namaproduk"
-     android:layout_marginLeft="10dp"
-     android:layout_marginTop="13dp"
-     android:text="1221941012"
-     android:textColor="#a30046"
-     android:textSize="15sp"
-     ></TextView>
- -->
-<!-- status produk -->
-<TextView
-        android:id="@+id/status_text"
-    	android:textSize="14sp"
-  		android:layout_marginLeft="10dp"
-  		android:layout_marginTop="7dp"
-  		android:layout_marginRight="10dp"
-    	android:layout_marginBottom="15dp"     
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/trans_namaproduk"
-        android:layout_toRightOf="@id/paneltrans_thumbnail"
-        android:text="Status:"
-         />
-<TextView
-        android:id="@+id/status_desc"
-    	android:textSize="16sp"
-  		android:layout_marginTop="5dp"
-    	android:layout_marginBottom="15dp"     
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/trans_namaproduk"
-        android:layout_toRightOf="@id/status_text"
-        android:text="DIANTAR"
-         />
 
-<ImageView
-    android:id="@+id/status_img"   
-	android:layout_width="30dip"
-	android:layout_height="30dip"
-	android:layout_toRightOf="@id/status_desc"
-	android:layout_below="@id/trans_namaproduk"
-	android:src="@drawable/payment_statuses_019"/>
+        <!-- label spesifikasi barang -->
 
-    <!-- tombol set terjual-->
-    
-    
-<!-- label spesifikasi barang -->
-<TextView
-    android:id="@+id/desc_speclabel"
-    style="@style/SubMenuTitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/paneltrans_thumbnail"
-    android:text="Deskripsi Produk"
-    android:textStyle="bold"
-    ></TextView>
+        <TextView
+            android:id="@+id/desc_speclabel"
+            style="@style/SubMenuTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi"
+            android:textStyle="bold" >
+        </TextView>
 
-<!-- label harga  -->
-<TextView
-    android:id="@+id/lbl_hargakategori"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_below="@id/desc_speclabel"
-    android:text="Harga"
-    
-    ></TextView>
+        <!-- label harga pesanan -->
 
-<!-- value harga -->
-<TextView
-    android:id="@+id/val_hargakategori"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/desc_speclabel"
-    android:layout_marginLeft="150dp"
-    android:text="Rp 2.000.000,00"
-    android:textStyle="bold"
-    
-    ></TextView>
+        <TextView
+            android:id="@+id/lbl_transactionid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc_speclabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="ID Transaksi" >
+        </TextView>
 
-<!-- label kondisi -->
-<TextView 
-    android:id="@+id/lbl_prodkondisi"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/lbl_hargakategori"
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="5dp" 
-    android:text="Kondisi"
-    
-    />
-<!-- value kondisi -->
-<TextView
-    android:id="@+id/val_prodkondisi"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/lbl_hargakategori"
-    android:layout_marginTop="5dp"
-    android:layout_marginLeft="150dp"
-    android:text="Baru"
-    android:textStyle="bold"
-    ></TextView>
+        <!-- value harga pesanan -->
 
-<!-- label catatan dari pembeli -->
-<TextView
-    android:id="@+id/lbl_catatan"
-    style="@style/SubMenuTitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/lbl_prodkondisi"
-    android:text="Catatan dari Pembeli"
-    android:textStyle="bold"
-    android:layout_marginTop="20dp"
-    ></TextView>
+        <TextView
+            android:id="@+id/val_transactionid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc_speclabel"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textStyle="bold" >
+        </TextView>
 
-<TextView 
-    android:id="@+id/val_catatan"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_below="@id/lbl_catatan"
-    android:text="Tulis deskripsi di sini"
-    />
+        <!-- status produk -->
 
-<!-- Button Aksi yang akan dilakukan -->
-<Button
-    android:id="@+id/btn_aksi"
-    android:layout_width="100dp"
-    android:layout_height="35dp"
-    android:layout_below="@+id/status_desc"
-    android:layout_toLeftOf="@+id/status_img"
-    android:background="@drawable/list_selector"
-    android:text="Terima Barang"
-    android:textSize="12sp" />
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_transactionid"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Status"
+            android:textSize="14sp" />
 
-<!-- label alamat pengiriman -->
-<TextView
-    android:id="@+id/pengiriman_label"
-    style="@style/SubMenuTitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/val_catatan"
-    android:text="Alamat Pengiriman"
-    android:textStyle="bold"
-    android:layout_marginTop="20dp"
-    ></TextView>
+        <TextView
+            android:id="@+id/status_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_transactionid"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textSize="16sp" />
 
-<!-- label Nama -->
-<TextView
-    android:id="@+id/lbl_namapengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_below="@id/pengiriman_label"
-    android:text="Nama"
-    ></TextView>
+        <ImageView
+            android:id="@+id/status_img"
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_below="@+id/lbl_transactionid"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/status_desc"
+            android:src="@drawable/payment_statuses_019" />
 
-<!-- value nama -->
-<TextView
-    android:id="@+id/val_namapengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/pengiriman_label"
-    android:layout_marginLeft="150dp"
-    android:text="Wulandari"
-    android:textStyle="bold"
-    
-    ></TextView>
+        <!-- label harga pesanan -->
 
-<!-- label telepon -->
-<TextView
-    android:id="@+id/lbl_telppengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_below="@id/lbl_namapengiriman"
-    android:text="Telepon"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <TextView
+            android:id="@+id/lbl_hargapesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/status_text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Harga Pesanan" >
+        </TextView>
 
-<!-- value telepon -->
-<TextView
-    android:id="@+id/val_telppengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/val_namapengiriman"
-    android:layout_marginLeft="150dp"
-    android:text="08125810985"
-    android:textStyle="bold"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <!-- value harga pesanan -->
 
-<!-- label propinsi -->
-<TextView
-    android:id="@+id/lbl_proppengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_below="@id/lbl_telppengiriman"
-    android:text="Propinsi"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <TextView
+            android:id="@+id/val_hargapesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/status_text"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textStyle="bold" >
+        </TextView>
 
-<!-- value propinsi -->
-<TextView
-    android:id="@+id/val_proppengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/val_telppengiriman"
-    android:layout_marginLeft="150dp"
-    android:text="DKI Jakarta"
-    android:textStyle="bold"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <!-- label biaya kirim -->
 
-<!-- label kota -->
-<TextView
-    android:id="@+id/lbl_kotapengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_below="@id/lbl_proppengiriman"
-    android:text="Kota"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <TextView
+            android:id="@+id/lbl_biayakirim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_hargapesanan"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Biaya Kirim" />
+        <!-- value biaya kirim -->
 
-<!-- value kota -->
-<TextView
-    android:id="@+id/val_kotapengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/val_proppengiriman"
-    android:layout_marginLeft="150dp"
-    android:text="Jakarta"
-    android:textStyle="bold"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <TextView
+            android:id="@+id/val_biayakirim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_hargapesanan"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textStyle="bold" >
+        </TextView>
 
-<!-- label kecamatan -->
-<TextView
-    android:id="@+id/lbl_kecpengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_below="@id/lbl_kotapengiriman"
-    android:text="Kecamatan"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <!-- label harga total -->
 
-<!-- value kecamatan -->
-<TextView
-    android:id="@+id/val_kecpengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/val_kotapengiriman"
-    android:layout_marginLeft="150dp"
-    android:text="Mampang"
-    android:textStyle="bold"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <TextView
+            android:id="@+id/lbl_hargatotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_biayakirim"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Harga Total" />
+        <!-- value kondisi -->
 
-<!-- label alamat -->
-<TextView
-    android:id="@+id/lbl_almpengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_below="@id/lbl_kecpengiriman"
-    android:text="Alamat"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
+        <TextView
+            android:id="@+id/val_hargatotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_biayakirim"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textStyle="bold" >
+        </TextView>
 
-<!-- value alamat -->
-<TextView
-    android:id="@+id/val_almpengiriman"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/val_kecpengiriman"
-    android:layout_marginLeft="150dp"
-    android:text="Jl. Mampang Prapatan No.18 Jakarta Selatan"
-    android:textStyle="bold"
-    
-    android:layout_marginTop="5dp" 
-    ></TextView>
- </RelativeLayout>
-</LinearLayout>
+        <!-- label baru -->
+
+        <TextView
+            android:id="@+id/lbl_produk"
+            style="@style/SubMenuTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/val_hargatotal"
+            android:layout_marginTop="20dp"
+            android:text="Produk"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/lbl_namaproduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_produk"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Nama Produk" />
+        <!-- value kondisi -->
+
+        <TextView
+            android:id="@+id/val_namaproduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_produk"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/lbl_linkproduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_namaproduk"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Link" />
+        <!-- value kondisi -->
+
+        <TextView
+            android:id="@+id/val_linkproduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_namaproduk"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:text="" >
+        </TextView>
+
+        <!-- label baru -->
+
+        <TextView
+            android:id="@+id/lbl_pembeli"
+            style="@style/SubMenuTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/val_linkproduk"
+            android:layout_marginTop="20dp"
+            android:text="Pembeli"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/lbl_namapembeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_pembeli"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Nama Pembeli" />
+        <!-- value kondisi -->
+
+        <TextView
+            android:id="@+id/val_namapembeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_pembeli"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/lbl_usernamepembeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_namapembeli"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Link" />
+        <!-- value kondisi -->
+
+        <TextView
+            android:id="@+id/val_usernamepembeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_namapembeli"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+            android:text="&lt;tidak tersedia>"
+            android:textStyle="bold" >
+        </TextView>
+
+        <Button
+            android:id="@+id/trans_btnsend"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/val_usernamepembeli"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/payment_statuses_019"
+            android:focusable="false"
+            android:text="Kirim Barang"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</ScrollView>
